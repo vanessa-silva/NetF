@@ -19,6 +19,16 @@ Please cite our paper if you use the code:
 - **real_ts**: benchmark empirical data, the set of *8* selected data sets from [*UEA \& UCR Time Series Classification Repository*](www.timeseriesclassification.com) and the *18Pairs* data set from *R* package *TSclust*  
 - **ts_models**: Data Generating Processes, the set of *11* linear and nonlinear time series models
 <!--- - Each file is the current format: -->
-<!--- - The folder *Data/realts* contains all the univariate time series data sets from *UEA \& UCR Time Series Classification Repository*. These data sets can also be downloaded [here](https://www.timeseriesclassification.com/dataset.php). 
+<!--- - The folder *Data/realts* contains all the univariate time series data sets from *UEA \& UCR Time Series Classification Repository*. These data sets can also be downloaded [here](https://www.timeseriesclassification.com/dataset.php). -->
 
-### Usage -->
+### Source Files
+- **main** : runs all experiments presented in paper
+- **libraries** : contains all required packages for the procedures
+- **simm_models** : contains the functions to simulate Data Generation Processes 
+- **dgp** : generates the specific Data Generation Processes to the paper
+- **read_empirical** : reads benchmark empirical data sets of UEA & UCR Time Series Classification Repository
+- **vg_algorithm** : contains the Natural and Horizontal Visibility Graph algorithms
+- **qg_algorithm** : contains the Quantile Graph algorithm
+- **ts_mapping** : contains the main function to run time series mapping algorithms
+- **net_features** : contains the network feature functions to create de NetF
+- **main_features_tsmodels** : runs main procedure to calculate features matrices from the synthetic DGP dataset
