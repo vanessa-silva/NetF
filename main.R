@@ -56,3 +56,47 @@ source("net_features.R")
 #  catch22 matrices
 source("main_features_tsmodels.R")
 
+
+
+#######################################################
+#### load main procedure to run empirical evaluation:
+#### clustering of time series models
+
+source("emp_eval_tsmodels.R")
+
+
+
+#######################################################
+#### load main procedure to calculate features from
+#### the Production in Brazil dataset
+
+## generate VGs and QGs; calculate NetF, tsfeature and
+#  catch22 matrices
+source("main_features_brazil.R")
+
+
+
+#######################################################
+#### load main procedure to run experimental evaluation:
+#### clustering of production in Brazil data
+
+source("exp_eval_brazil.R")
+
+
+
+#######################################################
+#### load main procedure to calculate features from
+#### the M3 dataset
+
+## generate VGs and QGs; calculate NetF, tsfeature and
+#  catch22 matrices
+source("main_features_M3.R")
+
+
+
+#######################################################
+#### load main procedure to run experimental evaluation:
+#### clustering of M3 data
+
+source("exp_eval_M3.R")
+
