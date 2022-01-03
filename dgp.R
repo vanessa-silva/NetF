@@ -23,6 +23,3 @@ HMM_ts <- gera_TimeSeries(T, theta, inst_numb, 8)             ## HMM
 INAR_ts <- gera_TimeSeries(T, theta, inst_numb, 9)            ## INAR(1)
 GARCH_ts <- gera_TimeSeries(T, theta, inst_numb, 10)          ## GARCH(1,1)
 EGARCH_ts <- gera_TimeSeries(T, theta, inst_numb, 11)         ## EGARCH(1,1)
-
-
-rm(ARIMA, i, theta)

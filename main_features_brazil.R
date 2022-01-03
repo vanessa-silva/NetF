@@ -3,7 +3,7 @@
 #############################################################
 
 ## load datasets
-load("Data/production_Brazil.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/production_Brazil.RData"))
 
 #######################################################
 #### Generate Graphs using the Time Series Mappings
@@ -18,7 +18,6 @@ whvg_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(pro
 qg50_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(prodBrazil), q = 50, map_type = "QG", is_Markov = TRUE)
 
 
-
 #############################################################
 ################ CALCULATE FEATURES - NetF ##################
 #############################################################
@@ -27,20 +26,17 @@ qg50_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(pro
 #### calculate NetF - Network Features
 
 ## (W)NVG
-load("Graphs/prodBrazil/wnvg_prodts.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/prodBrazil/wnvg_prodts.RData"))
 
 m_wnvg_ProdBraz <- calc_metrics(wnvg_ProdBraz, length(wnvg_ProdBraz), map_type = "NVG", weight_type = TRUE)
 
 ## (W)HVG
-load("Graphs/prodBrazil/whvg_prodts.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/prodBrazil/whvg_prodts.RData"))
 
 m_whvg_ProdBraz <- calc_metrics(whvg_ProdBraz, length(whvg_ProdBraz), map_type = "HVG", weight_type = TRUE)
 
 ## QG Markov
-load("Graphs/prodBrazil/50qg_Mkv_prodts.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/prodBrazil/50qg_Mkv_prodts.RData"))
 
 m_qg_ProdBraz <- calc_metrics(qg50_ProdBraz, length(qg50_ProdBraz), map_type = "QG")
 
@@ -52,22 +48,19 @@ m_qg_ProdBraz <- calc_metrics(qg50_ProdBraz, length(qg50_ProdBraz), map_type = "
 source("min_max_norm.R")
 
 ## (W)NVG
-load("Metrics/prodBrazil/metrics_wnvg_prodts.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_wnvg_prodts.RData"))
 
 summary(m_wnvg_ProdBraz)
 nm_wnvg_ProdBraz <- norm_data(m_wnvg_ProdBraz)
 
 ## (W)HVG
-load("Metrics/prodBrazil/metrics_whvg_prodts.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_whvg_prodts.RData"))
 
 summary(m_whvg_ProdBraz)
 nm_whvg_ProdBraz <- norm_data(m_whvg_ProdBraz)
 
 ## QG Mkv
-load("Metrics/prodBrazil/metrics_50qg_Mkv_prodts.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_50qg_Mkv_prodts.RData"))
 
 summary(m_qg_ProdBraz)
 nm_qg_ProdBraz <- norm_data(m_qg_ProdBraz)
@@ -86,7 +79,7 @@ summary(metrics_Hynd)
 #######################################################
 #### normalize tsfeature
 
-load("Metrics/prodBrazil/metrics_tsfeature_prodts.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_tsfeature_prodts.RData"))
 
 nmetrics_Hynd <- norm_data(metrics_Hynd)
 
@@ -106,6 +99,6 @@ summary(metrics_catch22)
 #######################################################
 #### normalize catch22
 
-load("Metrics/prodBrazil/metrics_catch22_prodts.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_catch22_prodts.RData"))
 
 nmetrics_catch22 <- norm_data(metrics_catch22)

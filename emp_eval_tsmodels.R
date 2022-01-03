@@ -126,7 +126,7 @@ pcaplots$pca_plot
 
 
 #######################################################
-#### clustering analysis -- tsfeatires
+#### clustering analysis -- tsfeatures
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/normetrics_tsfeature.RData"))

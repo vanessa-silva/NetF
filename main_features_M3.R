@@ -3,7 +3,7 @@
 #############################################################
 
 ## load datasets
-load("Data/M3_data.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/M3_data.RData"))
 
 #######################################################
 #### Generate Graphs using the Time Series Mappings
@@ -26,20 +26,17 @@ qg50_m3 <- generate_Graphs_list(m3_data, length(m3_data), q = 50, map_type = "QG
 #### calculate NetF - Network Features
 
 ## (W)NVG
-load("Graphs/M3/wnvg_m3.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs_list)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/M3/wnvg_m3.RData"))
 
 m_wnvg_m3 <- calc_metrics(wnvg_m3, length(wnvg_m3), map_type = "NVG", weight_type = TRUE)
 
 ## (W)HVG
-load("Graphs/M3/whvg_m3.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs_list)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/M3/whvg_m3.RData"))
 
 m_whvg_m3 <- calc_metrics(whvg_m3, length(whvg_m3), map_type = "HVG", weight_type = TRUE)
 
 ## QG Markov
-load("Graphs/M3/50qg_Mkv_m3.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs_list)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/M3/50qg_Mkv_m3.RData"))
 
 m_50qg_m3 <- calc_metrics(qg50_m3, length(qg50_m3), map_type = "QG")
 
@@ -51,22 +48,19 @@ m_50qg_m3 <- calc_metrics(qg50_m3, length(qg50_m3), map_type = "QG")
 source("min_max_norm.R")
 
 ## (W)NVG
-load("Metrics/M3/metrics_wnvg_m3.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_wnvg_m3.RData"))
 
 summary(m_wnvg_m3)
 nm_wnvg_m3 <- norm_data(m_wnvg_m3)
 
 ## (W)HVG
-load("Metrics/M3/metrics_whvg_m3.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_whvg_m3.RData"))
 
 summary(m_whvg_m3)
 nm_whvg_m3 <- norm_data(m_whvg_m3)
 
 ## QG Mkv
-load("Metrics/M3/metrics_50qg_Mkv_m3.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_50qg_Mkv_m3.RData"))
 
 summary(m_50qg_m3)
 nm_50qg_m3 <- norm_data(m_50qg_m3)
@@ -86,7 +80,7 @@ metrics_Hynd <- metrics_Hynd[, 1:16]
 #######################################################
 #### normalize tsfeature
 
-load("Metrics/M3/metrics_tsfeature_m3.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_tsfeature_m3.RData"))
 
 nmetrics_Hynd <- norm_data(metrics_Hynd)
 
@@ -106,6 +100,6 @@ summary(metrics_catch22)
 #######################################################
 #### normalize catch22
 
-load("Metrics/M3/metrics_catch22_m3.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_catch22_m3.RData"))
 
 nmetrics_catch22 <- norm_data(metrics_catch22)

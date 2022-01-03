@@ -3,8 +3,8 @@
 #############################################################
 
 
+## auxiliary variables
 n_reps <- 10
-
 data <- normetrics[, c(idxs, ncol(normetrics))]
 
 

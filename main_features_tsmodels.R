@@ -3,8 +3,7 @@
 #############################################################
 
 ## load datasets
-load("Data/ts_models.RData")
-rm(gera_garch, gera_TimeSeries, geraINAR_Po, simnlts)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/ts_models.RData"))
 
 #######################################################
 #### Generate Graphs using the Time Series Mappings
@@ -58,8 +57,7 @@ qg_WN <- generate_Graphs(WN_ts, inst_numb, length = T, q = 50, map_type = "QG", 
 #### calculate NetF - Network Features
 
 ## (W)NVG
-load("Graphs/tsmodels/wnvg.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/tsmodels/wnvg.RData"))
 
 m_wnvg_AR1._0.5 <- calc_metrics(wnvg_AR1._0.5, inst_numb, map_type = "NVG", weight_type = TRUE)
 m_wnvg_AR1.0.5 <- calc_metrics(wnvg_AR1.0.5, inst_numb, map_type = "NVG", weight_type = TRUE)
@@ -74,8 +72,7 @@ m_wnvg_SETAR <- calc_metrics(wnvg_SETAR, inst_numb, map_type = "NVG", weight_typ
 m_wnvg_WN <- calc_metrics(wnvg_WN, inst_numb, map_type = "NVG", weight_type = TRUE)
 
 ## (W)HVG
-load("Graphs/tsmodels/whvg.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/tsmodels/whvg.RData"))
 
 m_whvg_AR1._0.5 <- calc_metrics(whvg_AR1._0.5, inst_numb, map_type = "HVG", weight_type = TRUE)
 m_whvg_AR1.0.5 <- calc_metrics(whvg_AR1.0.5, inst_numb, map_type = "HVG", weight_type = TRUE)
@@ -90,8 +87,7 @@ m_whvg_SETAR <- calc_metrics(whvg_SETAR, inst_numb, map_type = "HVG", weight_typ
 m_whvg_WN <- calc_metrics(whvg_WN, inst_numb, map_type = "HVG", weight_type = TRUE)
 
 ## QG Markov
-load("Graphs/tsmodels/50qg_Mkv.RData")
-rm(indexMax, NVG, HVG, QG, generate_Graphs)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Graphs/tsmodels/50qg_Mkv.RData"))
 
 m_qg_AR1._0.5 <- calc_metrics(qg_AR1._0.5, inst_numb, map_type = "QG")
 m_qg_AR1.0.5 <- calc_metrics(qg_AR1.0.5, inst_numb, map_type = "QG")
@@ -113,8 +109,7 @@ m_qg_WN <- calc_metrics(qg_WN, inst_numb, map_type = "QG")
 source("min_max_norm.R")
 
 ## (W)NVG
-load("Metrics/tsmodels/metrics_wnvg.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/metrics_wnvg.RData"))
 
 m_wnvg <- rbind(m_wnvg_WN, 
                 m_wnvg_AR1._0.5, m_wnvg_AR1.0.5, m_wnvg_AR2,
@@ -127,8 +122,7 @@ summary(m_wnvg)
 nm_wnvg <- norm_data(m_wnvg)
 
 ## (W)HVG
-load("Metrics/tsmodels/metrics_whvg.RData")
-rm(calc_metrics)
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/metrics_whvg.RData"))
 
 m_whvg <- rbind(m_whvg_WN, 
                 m_whvg_AR1._0.5, m_whvg_AR1.0.5, m_whvg_AR2,
@@ -142,7 +136,6 @@ nm_whvg <- norm_data(m_whvg)
 
 ## QG Mkv
 load("Metrics/tsmodels/metrics_50qg_Mkv.RData")
-rm(calc_metrics)
 
 m_50qg <- rbind(m_qg_WN, 
                 m_qg_AR1._0.5, m_qg_AR1.0.5, m_qg_AR2,
@@ -153,6 +146,8 @@ m_50qg <- rbind(m_qg_WN,
                 m_qg_INAR)
 summary(m_50qg)
 nm_50qg <- norm_data(m_50qg)
+
+
 #############################################################
 ########## CALCULATE FEATURES - Classical Features ##########
 #############################################################
@@ -173,7 +168,7 @@ summary(metrics_Hynd)
 #######################################################
 #### normalize tsfeature
 
-load("Metrics/tsmodels/metrics_tsfeature.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/metrics_tsfeature.RData"))
 
 nmetrics_Hynd <- norm_data(metrics_Hynd)
 
@@ -200,6 +195,6 @@ summary(metrics_catch22)
 #######################################################
 #### normalize catch22
 
-load("Metrics/tsmodels/metrics_catch22.RData")
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/metrics_catch22.RData"))
 
 nmetrics_catch22 <- norm_data(metrics_catch22)
