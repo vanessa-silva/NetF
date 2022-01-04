@@ -8,11 +8,12 @@ download.file(reats_url, "Data/Univariate2018_arff.zip")
 unzip(zipfile = "Data/Univariate2018_arff.zip", exdir = "Data/realts")
 
 ## get names of all datasets 
-data_names <- read.table(load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/realts/data_names.txt")))
-## datasets ID that lead to NA values of features
-missingValues_id <- c(3, 4, 5, 26, 27, 28, 35, 72, 105, 122)
+data_names <- read.table(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/realts/data_names.txt"))
 
 for(i in 1:nrow(data_names)) {
+  ## datasets ID that lead to NA values of features
+  missingValues_id <- c(3, 4, 5, 26, 27, 28, 72, 105, 122)
+  
   if(i %in% missingValues_id)
     next
   
