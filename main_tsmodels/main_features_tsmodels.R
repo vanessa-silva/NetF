@@ -106,7 +106,7 @@ m_qg_WN <- calc_metrics(qg_WN, inst_numb, map_type = "QG")
 #### normalize NetF
 
 ## load auxiliary function
-source("min_max_norm.R")
+source("../min_max_norm.R")
 
 ## (W)NVG
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/metrics_wnvg.RData"))

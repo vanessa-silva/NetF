@@ -4,8 +4,8 @@
 
 
 ### auxiliary variables to store results
-dataset <- "prodBrazil"
-data_name <- "prodBrazil"
+dataset <- "realts"
+data_name <- "pairs"
 
 total_comb <- 3
 
@@ -39,17 +39,17 @@ set.seed(2020)
 #######################################################
 #### clustering analysis -- NetF
 
-source("func_clustering.R")
+source("../func_clustering.R")
 
 ## load features
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_wnvg_prodts.RData"))
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_whvg_prodts.RData"))
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_50qg_Mkv_prodts.RData"))
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_normetrics_wnvg_realts.RData"))
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_normetrics_whvg_realts.RData"))
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_normetrics_50qg_Mkv_realts.RData"))
 
 ## auxiliary variables
-normetrics <- cbind(nm_wnvg_ProdBraz, nm_whvg_ProdBraz, 
-                    nm_qg_ProdBraz, 
-                    Classes)
+normetrics <- cbind(nm_wnvg_realts, 
+                    nm_whvg_realts, 
+                    nm_qg_realts, classes)
 colnames(normetrics) <- c("k_WNVG", "d_WNVG", "S_WNVG", "C_WNVG", "Q_WNVG",
                           "k_WHVG", "d_WHVG", "S_WHVG", "C_WHVG", "Q_WHVG",
                           "k_50-QG", "d_50-QG", "S_50-QG", "C_50-QG", "Q_50-QG",
@@ -58,7 +58,7 @@ colnames(normetrics) <- c("k_WNVG", "d_WNVG", "S_WNVG", "C_WNVG", "Q_WNVG",
 nvg <- 1:5
 hvg <- 6:10
 q50 <- 11:15
-k_1 <- length(unique(Classes))
+k_1 <- length(unique(normetrics[, ncol(normetrics)]))
 k_2 <- k_1
 
 indx_t <- 1
@@ -71,7 +71,7 @@ title <- "NetF"
 ### WNVG - WHVG - 50-QG
 mappings <- "NetF"
 idxs <- c(nvg, hvg, q50)
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -79,22 +79,21 @@ pcaplots$pca_plot
 #### clustering analysis -- tsfeatures
 
 ## load features
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_tsfeature_prodts.RData"))
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_normetrics_tsfeature_realts.RData"))
 
 ## auxiliary variables
-nmetrics_Hynd <- cbind(nmetrics_Hynd, Classes)
+nmetrics_Hynd <- cbind(nmetrics_Hynd, classes)
 
-k_1 <- length(unique(nmetrics_Hynd$Classes))
+k_1 <- length(unique(nmetrics_Hynd$classes))
 k_2 <- k_1
 
 title <- "tsfeature"
 
-
-## experimental analysis of tsfeature 
+## experimental analysis of Hyndman features from 'tsfeature' package
 mappings <- "tsfeature"
 normetrics <- nmetrics_Hynd
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -102,22 +101,21 @@ pcaplots$pca_plot
 #### clustering analysis -- Rcatch22
 
 ## load features
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_catch22_prodts.RData"))
+load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_normetrics_catch22_realts.RData"))
 
 ## auxiliary variables
-nmetrics_catch22 <- cbind(nmetrics_catch22, Classes)
+nmetrics_catch22 <- cbind(nmetrics_catch22, classes)
 
-k_1 <- length(unique(nmetrics_catch22$Classes))
+k_1 <- length(unique(nmetrics_catch22$classes))
 k_2 <- k_1
 
-title <- "catch22"
+title <- "Rcatch22"
 
-
-## experimental analysis of chatch22
+## experimental analysis of catch22 features from 'Rcatch22' package
 mappings <- "Rcatch22"
 normetrics <- nmetrics_catch22
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 

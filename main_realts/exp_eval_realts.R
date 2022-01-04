@@ -67,7 +67,7 @@ set.seed(2020)
 #######################################################
 #### clustering analysis -- NetF
 
-source("func_clustering.R")
+source("../func_clustering.R")
 
 for(i in 1:nrow(data_names)) {
   missingValues_id <- c(3, 4, 5, 26, 27, 28, 72, 105, 122)
@@ -135,7 +135,7 @@ for(i in 1:nrow(data_names)) {
   ### WNVG - WHVG - 50-QG
   mappings <- "NetF"
   idxs <- c(nvg, hvg, q50)
-  source("comp_clustering.R")
+  source("../comp_clustering.R")
   
   
   #######################################################
@@ -156,7 +156,7 @@ for(i in 1:nrow(data_names)) {
   mappings <- "tsfeature"
   normetrics <- nmetrics_Hynd
   idxs <- 1:ncol(normetrics)-1
-  source("comp_clustering.R")
+  source("../comp_clustering.R")
   
   
   #######################################################
@@ -177,7 +177,7 @@ for(i in 1:nrow(data_names)) {
   mappings <- "Rcatch22"
   normetrics <- nmetrics_catch22
   idxs <- 1:ncol(normetrics)-1
-  source("comp_clustering.R")
+  source("../comp_clustering.R")
   
   
   ###################

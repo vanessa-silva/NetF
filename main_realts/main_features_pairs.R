@@ -45,7 +45,7 @@ m_qg_realts <- calc_metrics(qg50_realts, length(qg50_realts), map_type = "QG")
 #### normalize NetF
 
 ## load auxiliary function
-source("min_max_norm.R")
+source("../min_max_norm.R")
 
 ## (W)NVG
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/realts/pairs_metrics_wnvg_realts.RData"))

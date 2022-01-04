@@ -44,7 +44,7 @@ set.seed(2020)
 #######################################################
 #### clustering analysis -- NetF
 
-source("func_clustering.R")
+source("../func_clustering.R")
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/tsmodels/normetrics_wnvg.RData"))
@@ -85,43 +85,43 @@ title <- "NetF"
 ### WNVG
 mappings <- "WNVG"
 idxs <- nvg
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### WHVG
 mappings <- "WHVG"
 idxs <- hvg
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### 50-QG
 mappings <- "50-QG"
 idxs <- q50
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### WNVG - WHVG
 mappings <- "WNVG - WHVG"
 idxs <- c(nvg, hvg)
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### WNVG - 50-QG
 mappings <- "WNVG - 50-QG"
 idxs <- c(nvg, q50)
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### WHVG - 50-QG
 mappings <- "WHVG - 50-QG"
 idxs <- c(hvg, q50)
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ### WNVG - WHVG - 50-QG
 mappings <- "WNVG - WHVG - 50-QG"
 idxs <- c(nvg, hvg, q50)
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -149,7 +149,7 @@ title <- "tsfeature"
 mappings <- "tsfeature"
 normetrics <- nmetrics_Hynd
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -177,7 +177,7 @@ title <- "Rcatch22"
 mappings <- "Rcatch22"
 normetrics <- nmetrics_catch22
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -203,7 +203,7 @@ title <- "NetF+tsfeatures"
 mappings <- "NetF+tsfeatures"
 normetrics <- cbind(nm_wnvg, nm_whvg, nm_50qg, nmetrics_Hynd, models)
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ## experimental analysis of NetF + catch22
@@ -211,7 +211,7 @@ title <- "NetF+catch22"
 mappings <- "NetF+catch22"
 normetrics <- cbind(nm_wnvg, nm_whvg, nm_50qg, nmetrics_catch22, models)
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ## experimental analysis of NetF + tsfeatures + catch22
@@ -219,7 +219,7 @@ title <- "NetF+tsfeatures+catch22"
 mappings <- "NetF+tsfeatures+catch22"
 normetrics <- cbind(nm_wnvg, nm_whvg, nm_50qg, nmetrics_Hynd, nmetrics_catch22, models)
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 ## experimental analysis of NetF + tsfeatures + catch22
@@ -227,7 +227,7 @@ title <- "tsfeatures+catch22"
 mappings <- "tsfeatures+catch22"
 normetrics <- cbind(nmetrics_Hynd, nmetrics_catch22, models)
 idxs <- 1:ncol(normetrics)-1
-source("comp_clustering.R")
+source("../comp_clustering.R")
 pcaplots$pca_plot
 
 

@@ -120,7 +120,7 @@ for(idx_name in 1:nrow(data_names)) {
 #### normalize NetF
 
 ## load auxiliary function
-source("min_max_norm.R")
+source("../min_max_norm.R")
 
 ## (W)NVG
 for(idx_name in 1:nrow(data_names)) {
@@ -240,7 +240,6 @@ for(idx_name in 1:nrow(data_names)) {
   metrics_catch22 <- as.data.frame(t(aux$values))
   colnames(metrics_catch22) <- aux$names
   for(i in 2:length(realts)) {
-    print(paste("---", i, "---"))
     aux <- catch22_all(realts[[i]])
     metrics_catch22 <- rbind(metrics_catch22, c(t(aux$values)))
   }

@@ -45,7 +45,7 @@ m_qg_ProdBraz <- calc_metrics(qg50_ProdBraz, length(qg50_ProdBraz), map_type = "
 #### normalize NetF
 
 ## load auxiliary function
-source("min_max_norm.R")
+source("../min_max_norm.R")
 
 ## (W)NVG
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_wnvg_prodts.RData"))
