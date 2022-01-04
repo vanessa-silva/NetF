@@ -86,7 +86,7 @@ load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/type_
 ## auxiliary variables
 nmetrics_Hynd <- cbind(nmetrics_Hynd, m3_type)
 
-k_1 <- length(unique(normetrics[, ncol(normetrics)]))
+k_1 <- length(unique(nmetrics_Hynd$classes))
 k_2 <- k_1
 
 title <- "tsfeature"
@@ -109,7 +109,7 @@ load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/type_
 ## auxiliary variables
 nmetrics_catch22 <- cbind(nmetrics_catch22, m3_type)
 
-k_1 <- length(unique(normetrics[, ncol(normetrics)]))
+k_1 <- length(unique(nmetrics_catch22$classes))
 k_2 <- k_1
 
 title <- "Rcatch22"

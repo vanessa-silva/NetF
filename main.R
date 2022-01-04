@@ -100,3 +100,39 @@ source("main_features_M3.R")
 
 source("exp_eval_M3.R")
 
+
+
+#######################################################
+#### load main procedure to calculate features from
+#### the benchmark empirical data sets
+
+## generate VGs and QGs; calculate NetF, tsfeature and
+#  catch22 matrices
+source("main_features_realts.R")
+
+
+
+#######################################################
+#### load main procedure to run experimental evaluation:
+#### clustering of benchmark empirical data sets
+
+source("exp_eval_realts.R")
+
+
+
+#######################################################
+#### load main procedure to calculate features from
+#### the benchmark empirical data set "18 Pairs"
+
+## generate VGs and QGs; calculate NetF, tsfeature and
+#  catch22 matrices
+source("main_features_pairs.R")
+
+
+
+#######################################################
+#### load main procedure to run experimental evaluation:
+#### clustering of benchmark empirical "pairs" data set
+
+source("exp_eval_pairs.R")
+
