@@ -25,7 +25,11 @@ indexMax <- function(ts, left, right) {
 
 ## (Weighted) Natural Visibility Graph
 #  by default NVG is unweighted.
-#  Implementation based on "divide & conquer" algorithm.
+#  Implementation based on "divide & conquer" algorithm:
+#   Lan, X., Mo, H., Chen, S., Liu, Q., Deng, Y.: Fast 
+#   transformation from time series to visibility graphs. 
+#   Chaos: An Interdisciplinary Journal of Nonlinear 
+#   Science 25(8), 083105 (2015)
 NVG  <- function(ts, length, weight_type = FALSE) { 
   g <- data.frame()
   
@@ -113,6 +117,9 @@ NVG  <- function(ts, length, weight_type = FALSE) {
 
 ## (Weighted) Horizontal Visibility Graph
 #  by default HVG is unweighted.
+#   Luque, B., Lacasa, L., Ballesteros, F., Luque, J.: 
+#   Horizontal visibility graphs: Exact results for random
+#   time series. Physical Review E 80(4), 046103 (2009)
 HVG  <- function(ts, length, weight_type = FALSE) {
   g <- data.frame()
   
