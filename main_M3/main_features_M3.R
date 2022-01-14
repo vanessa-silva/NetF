@@ -45,7 +45,7 @@ m_50qg_m3 <- calc_metrics(qg50_m3, length(qg50_m3), map_type = "QG")
 #### normalize NetF
 
 ## load auxiliary function
-source("../min_max_norm.R")
+source("min_max_norm.R")
 
 ## (W)NVG
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_wnvg_m3.RData"))
@@ -103,3 +103,4 @@ summary(metrics_catch22)
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/metrics_catch22_m3.RData"))
 
 nmetrics_catch22 <- norm_data(metrics_catch22)
+

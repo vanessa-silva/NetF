@@ -9,13 +9,13 @@ load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Data/production_
 #### Generate Graphs using the Time Series Mappings
 
 ## (W)NVG
-wnvg_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(prodBrazil), map_type = "NVG", weight_type = TRUE)
+wnvg_ProdBraz <- generate_Graphs_list(timeSeries, length(timeSeries), map_type = "NVG", weight_type = TRUE)
 
 ## (W)HVG
-whvg_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(prodBrazil), map_type = "HVG", weight_type = TRUE)
+whvg_ProdBraz <- generate_Graphs_list(timeSeries, length(timeSeries), map_type = "HVG", weight_type = TRUE)
 
 ## QG Markov
-qg50_ProdBraz <- generate_Graphs(prodBrazil, ncol(prodBrazil), length = nrow(prodBrazil), q = 50, map_type = "QG", is_Markov = TRUE)
+qg50_ProdBraz <- generate_Graphs_list(timeSeries, length(timeSeries), q = 50, map_type = "QG", is_Markov = TRUE)
 
 
 #############################################################
@@ -45,7 +45,7 @@ m_qg_ProdBraz <- calc_metrics(qg50_ProdBraz, length(qg50_ProdBraz), map_type = "
 #### normalize NetF
 
 ## load auxiliary function
-source("../min_max_norm.R")
+source("min_max_norm.R")
 
 ## (W)NVG
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_wnvg_prodts.RData"))
@@ -73,7 +73,7 @@ nm_qg_ProdBraz <- norm_data(m_qg_ProdBraz)
 #######################################################
 #### calculate features - 'tsfeature' package
 
-metrics_Hynd <- tsfeatures(prodBrazil)
+metrics_Hynd <- tsfeatures(timeSeries)
 summary(metrics_Hynd)
 
 #######################################################
@@ -87,11 +87,11 @@ nmetrics_Hynd <- norm_data(metrics_Hynd)
 #######################################################
 #### calculate features - 'Rcatch22' package
 
-aux <- catch22_all(prodBrazil[, 1])
+aux <- catch22_all(timeSeries[[1]])
 metrics_catch22 <- as.data.frame(t(aux$values))
 colnames(metrics_catch22) <- aux$names
-for(i in 2:ncol(prodBrazil)) {
-  aux <- catch22_all(prodBrazil[, i])
+for(i in 2:length(timeSeries)) {
+  aux <- catch22_all(timeSeries[[i]])
   metrics_catch22 <- rbind(metrics_catch22, c(t(aux$values)))
 }
 summary(metrics_catch22)
@@ -102,3 +102,4 @@ summary(metrics_catch22)
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/metrics_catch22_prodts.RData"))
 
 nmetrics_catch22 <- norm_data(metrics_catch22)
+

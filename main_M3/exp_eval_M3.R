@@ -39,13 +39,12 @@ set.seed(2020)
 #######################################################
 #### clustering analysis -- NetF
 
-source("../func_clustering.R")
+source("func_clustering.R")
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/normetrics_wnvg_m3.RData"))
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/normetrics_whvg_m3.RData"))
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/normetrics_50qg_Mkv_m3.RData"))
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/type_m3.RData"))
 
 ## auxiliary variables
 normetrics <- cbind(nm_wnvg_m3, nm_whvg_m3,
@@ -72,7 +71,7 @@ title <- "NetF"
 ### WNVG - WHVG - 50-QG
 mappings <- "NetF"
 idxs <- c(nvg, hvg, q50)
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -81,12 +80,11 @@ pcaplots$pca_plot
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/normetrics_tsfeature_m3.RData"))
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/type_m3.RData"))
 
 ## auxiliary variables
 nmetrics_Hynd <- cbind(nmetrics_Hynd, m3_type)
 
-k_1 <- length(unique(nmetrics_Hynd$classes))
+k_1 <- length(unique(nmetrics_Hynd$m3_type))
 k_2 <- k_1
 
 title <- "tsfeature"
@@ -95,7 +93,7 @@ title <- "tsfeature"
 mappings <- "tsfeature"
 normetrics <- nmetrics_Hynd
 idxs <- 1:ncol(normetrics)-1
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -104,12 +102,11 @@ pcaplots$pca_plot
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/normetrics_catch22_m3.RData"))
-load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/M3/type_m3.RData"))
 
 ## auxiliary variables
 nmetrics_catch22 <- cbind(nmetrics_catch22, m3_type)
 
-k_1 <- length(unique(nmetrics_catch22$classes))
+k_1 <- length(unique(nmetrics_catch22$m3_type))
 k_2 <- k_1
 
 title <- "Rcatch22"
@@ -118,7 +115,7 @@ title <- "Rcatch22"
 mappings <- "Rcatch22"
 normetrics <- nmetrics_catch22
 idxs <- 1:ncol(normetrics)-1
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 

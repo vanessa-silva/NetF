@@ -24,7 +24,6 @@ generate_Graphs <- function(timeseries, inst_numb, length, q = 0, map_type = "NV
   ## (W)NVG
   if(map_type == "NVG") {
     for(i in 1:inst_numb) {
-      #print(i)
       graph[[i]] <- NVG(timeseries[, i], length, weight_type)
       total_g <- total_g + 1
     }
@@ -33,7 +32,6 @@ generate_Graphs <- function(timeseries, inst_numb, length, q = 0, map_type = "NV
   ## (W)HVG
   else if(map_type == "HVG") {
     for(i in 1:inst_numb) {
-      #print(i)
       graph[[i]] <- HVG(timeseries[, i], length, weight_type)
       total_g <- total_g + 1
     }
@@ -42,7 +40,6 @@ generate_Graphs <- function(timeseries, inst_numb, length, q = 0, map_type = "NV
   ## QG
   else if (map_type == "QG") {
     for(i in 1:inst_numb) {
-      #print(i)
       graph[[i]] <- QG(timeseries[, i], length, q, is_Markov)
       total_g <- total_g + 1
     }
@@ -69,7 +66,6 @@ generate_Graphs_list <- function(timeseries, inst_numb, q = 0, map_type = "NVG",
   ## (W)NVG
   if(map_type == "NVG") {
     for(i in 1:inst_numb) {
-      print(i)
       length <- length(timeseries[[i]])
       graph[[i]] <- NVG(timeseries[[i]], length, weight_type)
       total_g <- total_g + 1
@@ -79,7 +75,6 @@ generate_Graphs_list <- function(timeseries, inst_numb, q = 0, map_type = "NVG",
   ## (W)HVG
   else if(map_type == "HVG") {
     for(i in 1:inst_numb) {
-      print(i)
       length <- length(timeseries[[i]])
       graph[[i]] <- HVG(timeseries[[i]], length, weight_type)
       total_g <- total_g + 1
@@ -89,7 +84,6 @@ generate_Graphs_list <- function(timeseries, inst_numb, q = 0, map_type = "NVG",
   ## QG
   else if (map_type == "QG") {
     for(i in 1:inst_numb) {
-      print(i)
       length <- length(timeseries[[i]])
       graph[[i]] <- QG(timeseries[[i]], length, q, is_Markov)
       total_g <- total_g + 1

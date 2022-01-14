@@ -39,7 +39,7 @@ set.seed(2020)
 #######################################################
 #### clustering analysis -- NetF
 
-source("../func_clustering.R")
+source("func_clustering.R")
 
 ## load features
 load(url("https://www.dcc.fc.up.pt/~vanessa.silva/datasets/NetF/Metrics/prodBrazil/normetrics_wnvg_prodts.RData"))
@@ -71,7 +71,7 @@ title <- "NetF"
 ### WNVG - WHVG - 50-QG
 mappings <- "NetF"
 idxs <- c(nvg, hvg, q50)
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -94,7 +94,7 @@ title <- "tsfeature"
 mappings <- "tsfeature"
 normetrics <- nmetrics_Hynd
 idxs <- 1:ncol(normetrics)-1
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 
@@ -117,7 +117,7 @@ title <- "catch22"
 mappings <- "Rcatch22"
 normetrics <- nmetrics_catch22
 idxs <- 1:ncol(normetrics)-1
-source("../comp_clustering.R")
+source("comp_clustering.R")
 pcaplots$pca_plot
 
 
