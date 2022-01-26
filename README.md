@@ -10,6 +10,10 @@ Please cite our paper if you use the code:
 > arXiv preprint arXiv:2110.09888 (2021).
 
 
+## Requirements
+- R (>= 3.6.0)
+
+
 ## Configurations
 
 ### Data
