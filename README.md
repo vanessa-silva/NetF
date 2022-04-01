@@ -5,8 +5,8 @@ This is the original implementation of ***NetF*** for the paper ["*Novel Feature
 Please cite our paper if you use the code:
 
 > Silva, V.F., Silva, M.E., Ribeiro, P., Silva, F.
-> Novel features for time series analysis: a complex networks approach
-> Data Min Knowl Disc (2022)
+> Novel features for time series analysis: a complex networks approach.
+> Data Min Knowl Disc (2022).
 > https://doi.org/10.1007/s10618-022-00826-3
 
 
