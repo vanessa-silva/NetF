@@ -1,13 +1,13 @@
 # NetF: A Novel Set of Time Series Features
 
-This is the original implementation of ***NetF*** for the paper ["*Novel Features for Time Series Analysis: A Complex Networks Approach*"](https://arxiv.org/pdf/2110.09888.pdf).
-<!--- and published in DAMI Journal (D M 2022) -->
+This is the original implementation of ***NetF*** for the paper ["*Novel Features for Time Series Analysis: A Complex Networks Approach*"](https://doi.org/10.1007/s10618-022-00826-3) published in Data Mining and Knowledge Discovery.
 
 Please cite our paper if you use the code:
 
-> Silva, V.F.; Silva, M.E.; Ribeiro, P.; Silva, F.
-> Novel Features for Time Series Analysis: A Complex Networks Approach
-> arXiv preprint arXiv:2110.09888 (2021).
+> Silva, V.F., Silva, M.E., Ribeiro, P., Silva, F.
+> Novel features for time series analysis: a complex networks approach
+> Data Min Knowl Disc (2022)
+> https://doi.org/10.1007/s10618-022-00826-3
 
 
 ## Requirements
